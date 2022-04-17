@@ -1,0 +1,52 @@
+FUNCTION scalaire_produit(n:INTEGER,T1,T2:ARRAY_OF INTEGER ) : INTEGER
+VAR
+    ps:=0:INTEGER;
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        ps := ps + T1[i]*T2[i]
+    RETURN ps ;
+END
+
+ALGORITHM Dot_product
+VAR
+    i,n: INTEGER;
+    V1,V2: ARRAY_OF INTEGER[n];
+    produit:=0:INTEGER
+BEGIN
+    ps:=scalaire_produit(n,V1,V2);
+    IF (ps==0) THEN
+            write("Les deux vecteurs sont orthgonales");
+        ELSE
+            write("Les deux vecteurs ne sont pas orthgonales");
+
+        END_IF
+END
+////////////////////////////
+////////////////////////////
+////////////////////////////
+PROCEDURE scalaire_produit(n : INTEGER,  T1,T2: ARRAY_OF INTEGER,  produit: INTEGER)
+VAR
+    
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        produit := produit + T1[i]*T2[i]
+    END_FOR
+END
+
+ALGORITHM Dot_product
+VAR
+    i,n: INTEGER;
+    V1,V2: ARRAY_OF INTEGER[n];
+    produit:=0:INTEGER;
+BEGIN
+    scalaire_produit(n,V1,V2,produit);
+        IF (produit==0) THEN
+            write("Les deux vecteurs sont orthgonales");
+        ELSE
+            write("Les deux vecteurs ne sont pas orthgonales");
+
+        END_IF
+    END_FOR
+END
